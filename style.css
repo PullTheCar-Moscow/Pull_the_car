@@ -45,7 +45,42 @@ header .container {
     font-size: 14px;
     color: #ccc;
 }
+/* Улучшенный логотип с иконкой */
+.logo-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
 
+.logo-with-icon i {
+    font-size: 32px;
+    color: #4CAF50;
+    text-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 2px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo-subtitle {
+    font-size: 13px;
+    color: #bdc3c7;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: 0.8px;
+    opacity: 0.9;
+}
 nav a {
     color: white;
     text-decoration: none;
@@ -583,6 +618,44 @@ Olga Volkova, [09.01.2026 11:34]
     
     .portfolio-item {
         height: 280px;
+    }
+}
+@media (max-width: 768px) {
+    .logo-with-icon {
+        gap: 10px;
+    }
+    
+    .logo-with-icon i {
+        font-size: 24px;
+    }
+    
+    .logo h1 {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+    
+    .logo-subtitle {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-with-icon {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .logo-with-icon i {
+        font-size: 28px;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+    }
+    
+    .logo-subtitle {
+        font-size: 10px;
     }
 }
 
