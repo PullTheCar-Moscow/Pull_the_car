@@ -656,5 +656,71 @@ footer {
     }
 }
 
+/* ===== УМНАЯ ШАПКА ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+    /* Фиксированная шапка */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(51, 51, 51, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 12px 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Шапка скрыта */
+    header.header-hidden {
+        transform: translateY(-100%);
+        box-shadow: none;
+    }
+    
+    /* Шапка видна (при скролле вверх) */
+    header.header-visible {
+        transform: translateY(0);
+    }
+    
+    /* Чтобы контент не уезжал под шапку */
+    body {
+        padding-top: 70px;
+    }
+    
+    /* Улучшаем логотип для мобильных */
+    .logo {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    /* Улучшаем меню для мобильных */
+    nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+        margin: 0 5px;
+    }
+    
+    /* Телефон в шапке */
+    .header-phone {
+        font-size: 14px;
+        background: #ff6600;
+        padding: 6px 12px;
+        border-radius: 20px;
+        margin-left: 10px;
+    }
+}
+
+/* Для десктопов (не меняем) */
+@media (min-width: 769px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+}    
   
+
 
