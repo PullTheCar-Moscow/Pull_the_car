@@ -374,10 +374,101 @@
         });
     </script>
 
+    <script>
+// Умная шапка с улучшенной логикой
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    const mobileBreakpoint = 768;
+    let lastScrollTop = 0;
+    let ticking = false;
+    
+    // Проверка на мобильное устройство
+    function isMobile() {
+        return window.innerWidth <= mobileBreakpoint;
+    }
+    
+    // Основная функция скролла
+    function handleScroll() {
+        if (!isMobile() || !header) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollDelta = scrollTop - lastScrollTop;
+        
+        // Если скроллим вниз и проскроллили больше 100px
+        if (scrollDelta > 0 && scrollTop > 100) {
+            header.classList.add('header-hidden');
+            header.classList.remove('header-visible');
+        }
+        // Если скроллим вверх
+        else if (scrollDelta < 0) {
+            header.classList.remove('header-hidden');
+            header.classList.add('header-visible');
+        }
+        
+        // Если в самом верху страницы
+        if (scrollTop < 10) {
+            header.classList.remove('header-hidden', 'header-visible');
+        }
+        
+        lastScrollTop = scrollTop;
+        ticking = false;
+    }
+    
+    // Оптимизация производительности
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+            });
+            ticking = true;
+        }
+    });
+    
+    // Обработка изменения размера окна
+    window.addEventListener('resize', function() {
+        if (!isMobile()) {
+            header.classList.remove('header-hidden', 'header-visible');
+        }
+    });
+    
+    // Плавный скролл для якорных ссылок
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                
+                // Показываем шапку на мобильных
+                if (isMobile()) {
+                    header.classList.remove('header-hidden');
+                    header.classList.add('header-visible');
+                    
+                    // Ждем пока шапка появится
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                } else {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
+});
+</script>
 
 </body>
 
 </html>
+
 
 
 
