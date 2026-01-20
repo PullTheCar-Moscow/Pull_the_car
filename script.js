@@ -1,4 +1,3 @@
-Olga Volkova, [09.01.2026 12:10]
 // ============================================
 // КАЛЬКУЛЯТОР СТОИМОСТИ ОКЛЕЙКИ АВТОМОБИЛЯ
 // ============================================
@@ -316,4 +315,38 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
 } else {
     init();
+
 }
+
+// Добавьте этот код в ваш существующий JavaScript файл
+document.addEventListener('DOMContentLoaded', function() {
+  // Определяем мобильное устройство
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+  
+  // Находим ссылку Telegram
+  const telegramLink = document.querySelector('.telegram-link');
+  
+  if (telegramLink && isMobile()) {
+    const username = 'evgen_19999';
+    
+    // Заменяем ссылку на tg:// для прямого открытия в приложении
+    telegramLink.href = tg://resolve?domain=${username};
+    
+    // Обработчик клика
+    telegramLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Пытаемся открыть в приложении
+      window.location.href = tg://resolve?domain=${username};
+      
+      // Если приложение не открылось, через 300мс открываем в браузере
+      setTimeout(function() {
+        if (!document.hidden) {
+          window.location.href = https://t.me/${username};
+        }
+      }, 300);
+    });
+  }
+});
