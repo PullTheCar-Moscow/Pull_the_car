@@ -1301,3 +1301,179 @@ padding: 0 8px !important;
         }
     }
 }
+Olga Volkova, [20.01.2026 15:16]
+/* =========================================== */
+/* ИЗМЕНЕНИЕ ЦВЕТА КНОПОК "Рассчитать стоимость" и "Записаться онлайн" */
+/* =========================================== */
+
+/* Кнопка "Рассчитать стоимость" (btn-primary) */
+.btn-primary {
+    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 16px 35px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3) !important;
+    text-align: center !important;
+    min-width: 220px !important;
+    margin: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Эффект при наведении для btn-primary */
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%) !important;
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4) !important;
+}
+
+/* Эффект "волны" при наведении */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-primary:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+/* Кнопка "Записаться онлайн" (btn-secondary) */
+.btn-secondary {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%) !important;
+    color: white !important;
+    border: 2px solid transparent !important;
+    border-radius: 12px !important;
+    padding: 16px 35px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3) !important;
+    text-align: center !important;
+    min-width: 220px !important;
+    margin: 10px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    letter-spacing: 0.5px !important;
+}
+
+/* Эффект при наведении для btn-secondary */
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 15px 35px rgba(76, 175, 80, 0.4) !important;
+}
+
+/* Эффект свечения для btn-secondary */
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4CAF50, #8BC34A, #4CAF50);
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-secondary:hover::before {
+    opacity: 0.6;
+}
+
+/* Для кнопок в hero секции */
+.hero .btn-primary,
+.hero .btn-secondary {
+    font-size: 19px !important;
+    padding: 18px 40px !important;
+    margin: 15px !important;
+}
+
+/* Контейнер кнопок в герое */
+.cta-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+/* Мобильная версия кнопок */
+@media (max-width: 768px) {
+    .btn-primary,
+    .btn-secondary {
+        min-width: 280px !important;
+        padding: 14px 25px !important;
+        font-size: 17px !important;
+        margin: 8px !important;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero .btn-primary,
+    .hero .btn-secondary {
+        min-width: 90% !important;
+
+Olga Volkova, [20.01.2026 15:16]
+max-width: 300px !important;
+    }
+}
+
+/* Отключение стандартных стилей браузера */
+a.btn-primary,
+a.btn-secondary {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Фокус-эффект для доступности */
+.btn-primary:focus,
+.btn-secondary:focus {
+    outline: 3px solid rgba(255, 152, 0, 0.5) !important;
+    outline-offset: 3px !important;
+}
+
+/* Активное состояние (при нажатии) */
+.btn-primary:active,
+.btn-secondary:active {
+    transform: translateY(-2px) scale(0.98) !important;
+    transition: transform 0.1s !important;
+}
