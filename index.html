@@ -10,34 +10,57 @@
     <meta name="author" content="Pull_the_car Москва">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ДОПОЛНИТЕЛЬНЫЙ CSS ДЛЯ ЯКОРНЫХ ССЫЛОК */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+        
+        section[id] {
+            scroll-margin-top: 120px;
+        }
+        
+        #services, #works {
+            position: relative;
+        }
+        
+        /* Невидимый якорь для точного позиционирования */
+        .anchor-fix {
+            position: absolute;
+            top: -120px;
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="logo">
-    <div class="logo-with-icon">
-        <i class="fas fa-car"></i>
-        <div class="logo-text">
-            <h1>Pull_The_Car</h1>
-            <p class="logo-subtitle">Оклейка авто в Москве</p>
-        </div>
-    </div>
-</div>
+                <div class="logo-with-icon">
+                    <i class="fas fa-car"></i>
+                    <div class="logo-text">
+                        <h1>Pull_The_Car</h1>
+                        <p class="logo-subtitle">Оклейка авто в Москве</p>
+                    </div>
+                </div>
+            </div>
             <nav class="nav">
                 <a href="#main">Главная</a>
-                <a href="#services">Услуги</a>
+                <a href="#services">Услуги</a> <!-- Изменено с #works на #services -->
                 <a href="#calculator">Калькулятор</a>
                 <a href="#works">Работы</a>
                 <a href="#contacts">Контакты</a>
             </nav>
             <div class="phone">
-    <a href="tel:+79105152421" class="phone-number">
-        <i class="fas fa-phone"></i> +7 (910) 515-24-21
-    </a>
-    <a href="https://t.me/evgen_19999" class="telegram">
-        <i class="fab fa-telegram"></i> Telegram
-    </a>
-</div>
+                <a href="tel:+79105152421" class="phone-number">
+                    <i class="fas fa-phone"></i> +7 (910) 515-24-21
+                </a>
+                <a href="https://t.me/evgen_19999" class="telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </a>
+            </div>
+        </div>
     </header>
 
     <section class="hero" id="main">
@@ -51,7 +74,10 @@
         </div>
     </section>
 
-    <section class="services" id="works">
+    <!-- Добавляем невидимый якорь перед секцией -->
+    <div class="anchor-fix" id="services-anchor"></div>
+    
+    <section class="services" id="services"> <!-- Изменено с id="works" на id="services" -->
         <div class="container">
             <h2>Услуги</h2>
             <div class="services-grid">
@@ -73,15 +99,6 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Химчистка салона</h3>
-                    <p>Удаление загрязнений салона</p>
-                    <span class="price">от 5 000 ₽</span>
-                </div>
-            </div>
-        </div>
-    </section> 
 <!-- Портфолио -->
 <section class="portfolio">
     <div class="container">
@@ -495,6 +512,7 @@ if (window.innerWidth <= 768) {
 </body>
 
 </html>
+
 
 
 
