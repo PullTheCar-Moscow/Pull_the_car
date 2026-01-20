@@ -953,72 +953,97 @@ footer::before {
         z-index: 100;
     }
 }    
- Olga Volkova, [20.01.2026 14:11]
+Olga Volkova, [20.01.2026 14:30]
 /* =========================================== */
-/* МОБИЛЬНАЯ ВЕРСИЯ ШАПКИ (до 768px) */
+/* КОМПАКТНАЯ ШАПКА ДЛЯ ТЕЛЕФОНА */
 /* =========================================== */
 
 @media (max-width: 768px) {
-    /* 1. ФИКСИРОВАННАЯ ШАПКА */
+    /* 1. МИНИМАЛЬНАЯ ШАПКА */
     header {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         right: 0 !important;
-        height: 60px !important;
+        height: 50px !important; /* Уменьшили с 60px до 50px */
+        min-height: 50px !important;
         background: rgba(26, 26, 46, 0.98) !important;
-        backdrop-filter: blur(10px) !important;
+        backdrop-filter: blur(8px) !important;
         z-index: 1000 !important;
         padding: 0 !important;
-        transition: transform 0.3s ease !important;
+        margin: 0 !important;
+        transition: transform 0.25s ease !important;
         transform: translateY(0) !important;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.2) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
     
-    /* Шапка скрыта при скролле вниз */
+    /* Скрытая шапка */
     header.header-hidden {
         transform: translateY(-100%) !important;
-        box-shadow: none !important;
     }
     
-    /* Шапка видна при скролле вверх */
-    header.header-visible {
-        transform: translateY(0) !important;
-    }
-    
-    /* 2. КОНТЕЙНЕР ШАПКИ */
+    /* 2. КОНТЕЙНЕР - ПЛОТНЫЙ */
     header .container {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
-        height: 60px !important;
-        padding: 0 15px !important;
+        height: 50px !important; /* Соответствует высоте шапки */
+        padding: 0 10px !important; /* Минимальные отступы */
+        margin: 0 !important;
         max-width: 100% !important;
-    }
-    
-    /* 3. ЛОГОТИП - УМЕНЬШЕННЫЙ */
-    .logo-with-icon {
         gap: 8px !important;
     }
     
+    /* 3. СУПЕР-КОМПАКТНЫЙ ЛОГОТИП */
+    .logo-with-icon {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        min-width: 0 !important;
+        flex-shrink: 1 !important;
+    }
+    
     .logo-with-icon i {
-        font-size: 20px !important;
+        font-size: 16px !important; /* Маленькая иконка */
+        flex-shrink: 0 !important;
+    }
+    
+    .logo-text {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
     }
     
     .logo h1 {
-        font-size: 16px !important;
-        letter-spacing: 0.5px !important;
-        margin-bottom: 0 !important;
+        font-size: 14px !important; /* Очень маленький заголовок */
+        font-weight: 700 !important;
+        letter-spacing: 0.3px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 120px !important; /* Ограничиваем ширину */
     }
     
     .logo-subtitle {
-        font-size: 9px !important;
-        letter-spacing: 0.3px !important;
-        opacity: 0.8 !important;
+        font-size: 8px !important; /* Микро-текст */
+        letter-spacing: 0.2px !important;
+        opacity: 0.7 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
     }
     
-    /* 4. ГАМБУРГЕР-МЕНЮ (вместо обычной навигации) */
-    /* Скрываем стандартное меню */
+    /* 4. ГАМБУРГЕР МЕНЮ - КОМПАКТНЫЙ */
+    /* Скрываем обычное меню */
     nav {
         display: none !important;
     }
@@ -1029,29 +1054,43 @@ footer::before {
         background: none !important;
         border: none !important;
         color: white !important;
-        font-size: 24px !important;
+        font-size: 20px !important; /* Уменьшили */
         cursor: pointer !important;
-        padding: 8px !important;
-        margin-left: 10px !important;
+        padding: 6px !important;
+        margin: 0 !important;
+        width: 30px !important;
+        height: 30px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        flex-shrink: 0 !important;
         order: 3 !important;
+        border-radius: 4px !important;
+        transition: background 0.2s !important;
     }
     
-    /* Мобильное меню (появляется при клике) */
+    .menu-toggle:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Мобильное меню */
     .mobile-menu {
         position: fixed !important;
-        top: 60px !important;
+        top: 50px !important; /* Соответствует высоте шапки */
         left: 0 !important;
         right: 0 !important;
         background: rgba(26, 26, 46, 0.98) !important;
         backdrop-filter: blur(15px) !important;
-        padding: 20px !important;
-        transform: translateY(-100%) !important;
+        padding: 15px !important;
+
+Olga Volkova, [20.01.2026 14:30]
+transform: translateY(-100%) !important;
         opacity: 0 !important;
         visibility: hidden !important;
-        transition: all 0.3s ease !important;
+        transition: all 0.25s ease !important;
         z-index: 999 !important;
         border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
     }
     
     .mobile-menu.active {
@@ -1064,11 +1103,11 @@ footer::before {
         display: block !important;
         color: white !important;
         text-decoration: none !important;
-        padding: 15px !important;
-        text-align: center !important;
-        font-size: 16px !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-        transition: background 0.3s !important;
+        padding: 12px 15px !important;
+        text-align: left !important;
+        font-size: 14px !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        transition: all 0.2s !important;
     }
     
     .mobile-menu a:last-child {
@@ -1076,108 +1115,189 @@ footer::before {
     }
     
     .mobile-menu a:hover {
-        background: rgba(255, 152, 0, 0.2) !important;
+        background: rgba(255, 152, 0, 0.15) !important;
         color: #FF9800 !important;
+        padding-left: 20px !important;
     }
     
-    /* 5. КОНТАКТЫ В ШАПКЕ - КОМПАКТНЫЕ */
+    /* 5. ТЕЛЕФОН - МИНИМАЛИСТИЧНЫЙ */
     .phone {
         display: flex !important;
         flex-direction: column !important;
-        gap: 5px !important;
+        gap: 2px !important;
         order: 2 !important;
         margin-left: auto !important;
-        margin-right: 15px !important;
+        margin-right: 10px !important;
+        align-items: flex-end !important;
+        flex-shrink: 0 !important;
     }
     
     .phone-number {
-        font-size: 14px !important;
-        gap: 5px !important;
+        font-size: 12px !important; /* Уменьшили */
+        gap: 4px !important;
         display: flex !important;
         align-items: center !important;
-    }
-
-.phone-number i {
-        font-size: 14px !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+        background: rgba(255, 152, 0, 0.1) !important;
+        white-space: nowrap !important;
     }
     
-    /* 6. TELEGRAM КНОПКА - МАЛЕНЬКАЯ */
-    .telegram-button {
-        padding: 6px 12px !important;
+    .phone-number i {
         font-size: 12px !important;
-        gap: 5px !important;
-        border-radius: 6px !important;
+    }
+    
+    /* 6. TELEGRAM КНОПКА - МИКРО */
+    .telegram-button,
+    a[href*="t.me"],
+    a[href*="telegram"] {
+        padding: 4px 8px !important;
+        font-size: 11px !important;
+        gap: 4px !important;
+        border-radius: 4px !important;
         min-width: auto !important;
         order: 1 !important;
+        margin: 0 !important;
+        background: rgba(255, 152, 0, 0.2) !important;
+        color: #FF9800 !important;
+        border: 1px solid rgba(255, 152, 0, 0.3) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        white-space: nowrap !important;
     }
     
-    /* 7. ОСНОВНОЙ КОНТЕНТ С ОТСТУПОМ ОТ ШАПКИ */
+    .telegram-button:hover {
+        background: rgba(255, 152, 0, 0.3) !important;
+        transform: none !important;
+    }
+    
+    /* 7. ОТСТУП ДЛЯ КОНТЕНТА */
     body {
-        padding-top: 60px !important;
+        padding-top: 50px !important; /* Уменьшили отступ */
     }
     
-    /* Герой секция начинается сразу под шапкой */
+    /* Герой секция ближе к шапке */
     .hero {
         margin-top: 0 !important;
-        padding: 80px 0 40px !important;
+        padding: 40px 0 20px !important; /* Уменьшили отступы */
         min-height: auto !important;
     }
     
     .hero h2 {
-        font-size: 24px !important;
-        margin-bottom: 15px !important;
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+        padding-top: 0 !important;
     }
     
     .hero p {
-        font-size: 16px !important;
-        margin-bottom: 30px !important;
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
     }
     
-    /* 8. КНОПКИ В ГЕРОЕ - ВЕРТИКАЛЬНО */
+    /* 8. КНОПКИ В ГЕРОЕ - КОМПАКТНЫЕ */
     .buttons {
         flex-direction: column !important;
-        gap: 15px !important;
+        gap: 12px !important;
         align-items: center !important;
     }
     
     .btn {
-        min-width: 250px !important;
-        padding: 14px 20px !important;
-        font-size: 16px !important;
+        min-width: 200px !important; /* Уже */
+        padding: 10px 16px !important;
+        font-size: 14px !important;
+        border-radius: 6px !important;
     }
     
-    /* 9. ДРУГИЕ СЕКЦИИ */
+    /* 9. ДРУГИЕ СЕКЦИИ - МЕНЬШЕ ОТСТУПЫ */
     .portfolio,
     .calculator,
     .services,
     .contacts {
-        padding: 40px 0 !important;
+        padding: 30px 0 !important;
     }
     
-    .portfolio-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
+    .portfolio h2,
+    .calculator h2,
+    .services h2,
+    .contacts h2 {
+        font-size: 22px !important;
+        margin-bottom: 20px !important;
     }
     
-    .services-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-    
-    /* 10. БЕЗОПАСНЫЕ ОБЛАСТИ ДЛЯ IPHONE */
-    @supports (padding-top: env(safe-area-inset-top)) {
+    /* 10. АДАПТАЦИЯ ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ */
+    @media (max-width: 360px) {
         header {
-            padding-top: env(safe-area-inset-top) !important;
-            height: calc(60px + env(safe-area-inset-top)) !important;
+            height: 45px !important;
         }
         
-        .mobile-menu {
-            top: calc(60px + env(safe-area-inset-top)) !important;
+        header .container {
+            height: 45px !important;
+
+Olga Volkova, [20.01.2026 14:30]
+padding: 0 8px !important;
+        }
+        
+        .logo h1 {
+            font-size: 13px !important;
+            max-width: 100px !important;
+        }
+        
+        .logo-subtitle {
+            font-size: 7px !important;
+        }
+        
+        .phone-number {
+            font-size: 11px !important;
+            padding: 3px 6px !important;
+        }
+        
+        .telegram-button {
+            font-size: 10px !important;
+            padding: 3px 6px !important;
+        }
+        
+        .menu-toggle {
+            font-size: 18px !important;
+            width: 28px !important;
+            height: 28px !important;
         }
         
         body {
-            padding-top: calc(60px + env(safe-area-inset-top)) !important;
+            padding-top: 45px !important;
+        }
+        
+        .mobile-menu {
+            top: 45px !important;
+        }
+    }
+    
+    /* 11. IPHONE SAFARI - БЕЗОПАСНЫЕ ЗОНЫ */
+    @supports (padding-top: env(safe-area-inset-top)) {
+        header {
+            padding-top: env(safe-area-inset-top) !important;
+            height: calc(50px + env(safe-area-inset-top)) !important;
+        }
+        
+        header .container {
+            height: calc(50px + env(safe-area-inset-top)) !important;
+        }
+        
+        .mobile-menu {
+            top: calc(50px + env(safe-area-inset-top)) !important;
+        }
+        
+        body {
+            padding-top: calc(50px + env(safe-area-inset-top)) !important;
+        }
+        
+        @media (max-width: 360px) {
+            header {
+                height: calc(45px + env(safe-area-inset-top)) !important;
+            }
+            
+            body {
+                padding-top: calc(45px + env(safe-area-inset-top)) !important;
+            }
         }
     }
 }
-
