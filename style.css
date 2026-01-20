@@ -4,7 +4,7 @@
     background-image: none !important;
 }
 .cta-buttons a:last-child {
-    background: #4CAF50 !important;
+    background: ##FF980 !important;
 }
 /* Основные стили */
 * {
@@ -1634,5 +1634,6 @@ section#main .btn-secondary {
     display: inline-block !important;
     cursor: pointer !important;
 }
+
 
 
