@@ -1665,6 +1665,158 @@ section#main .btn-secondary {
     display: inline-block !important;
     cursor: pointer !important;
 }
+/* ОРАНЖЕВЫЙ TELEGRAM ДЛЯ okleyka-moscow.ru */
+
+/* Основной стиль для иконки Telegram */
+.telegram,
+a.telegram,
+a[href*="t.me"],
+a[href*="telegram"],
+.telegram-button,
+.tg-button {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Иконка внутри */
+.telegram i,
+a.telegram i,
+.telegram-button i {
+    font-size: 24px !important;
+    color: white !important;
+}
+
+/* Эффект при наведении */
+.telegram:hover,
+a.telegram:hover,
+a[href*="t.me"]:hover,
+a[href*="telegram"]:hover,
+.telegram-button:hover,
+.tg-button:hover {
+    transform: translateY(-3px) scale(1.1) !important;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6) !important;
+    background: linear-gradient(135deg, #FF5A00 0%, #FF8500 100%) !important;
+}
+
+/* Эффект нажатия */
+.telegram:active,
+a.telegram:active,
+a[href*="t.me"]:active,
+a[href*="telegram"]:active,
+.telegram-button:active,
+.tg-button:active {
+    transform: translateY(-1px) scale(1.05) !important;
+    box-shadow: 0 3px 10px rgba(255, 107, 0, 0.4) !important;
+}
+
+/* Анимация пульсации */
+@keyframes pulse-telegram {
+    0% {
+        box-shadow: 
+            0 4px 15px rgba(255, 107, 0, 0.4),
+            0 0 0 0 rgba(255, 107, 0, 0.7);
+    }
+    70% {
+        box-shadow: 
+            0 4px 15px rgba(255, 107, 0, 0.4),
+            0 0 0 10px rgba(255, 107, 0, 0);
+    }
+    100% {
+        box-shadow: 
+            0 4px 15px rgba(255, 107, 0, 0.4),
+            0 0 0 0 rgba(255, 107, 0, 0);
+    }
+}
+
+/* Применяем анимацию к телеграмму */
+.telegram,
+a.telegram,
+a[href*="t.me"]:first-child {
+    animation: pulse-telegram 3s infinite;
+}
+
+/* Для телеграмма в шапке или навигации */
+header .telegram,
+.nav .telegram,
+.phone .telegram {
+    margin-left: 10px;
+}
+
+/* Если телеграм рядом с телефоном */
+.phone-number + .telegram {
+    margin-left: 15px;
+}
+
+/* Если телеграм в социальных иконках */
+.social-icons .telegram,
+.social-links .telegram {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .telegram,
+    a.telegram,
+    a[href*="t.me"],
+    a[href*="telegram"] {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .telegram i,
+    a.telegram i {
+        font-size: 22px !important;
+    }
+}
+
+/* Альтернативные стили (если телеграм как кнопка) */
+a.telegram[class*="btn"],
+.telegram[class*="btn"] {
+    border-radius: 12px !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 12px 25px !important;
+    font-weight: 600 !important;
+    display: inline-flex !important;
+    gap: 10px;
+}
+
+/* Для телеграмма с текстом */
+a.telegram[class*="btn"] i {
+    font-size: 20px !important;
+}
+
+/* Убираем стандартный синий цвет телеграмма */
+a[href*="t.me"]:not(.telegram),
+a[href*="telegram"]:not(.telegram) {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+    color: white !important;
+}
+
+/* Для ссылки в консоли (как в вашем примере) */
+a[href="https://t.me/evgen_19999"] {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4) !important;
+}
 
 
 
