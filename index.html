@@ -464,10 +464,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
-
+<script>
+// Скрывающаяся шапка для телефона
+if (window.innerWidth <= 768) {
+    const header = document.querySelector('header');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const current = window.pageYOffset;
+        header.classList.toggle('header-hidden', current > lastScroll && current > 100);
+        if (current < 50) header.classList.remove('header-hidden');
+        lastScroll = current;
+    });
+    
+    // Гамбургер меню
+    const menuBtn = document.createElement('button');
+    menuBtn.innerHTML = '☰';
+    menuBtn.className = 'menu-toggle';
+    menuBtn.onclick = () => {
+        const menu = document.querySelector('.mobile-menu') || document.createElement('div');
+        menu.className = 'mobile-menu';
+        menu.innerHTML = document.querySelector('nav')?.innerHTML || '';
+        if (!document.querySelector('.mobile-menu')) document.body.appendChild(menu);
+        menu.classList.toggle('active');
+        menuBtn.innerHTML = menu.classList.contains('active') ? '✕' : '☰';
+    };
+    header?.querySelector('.container').appendChild(menuBtn);
+}
+</script>
 </body>
 
 </html>
+
 
 
 
