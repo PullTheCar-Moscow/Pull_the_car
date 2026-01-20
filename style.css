@@ -1,3 +1,4 @@
+Olga Volkova, [20.01.2026 13:26]
 /* Основные стили */
 * {
     margin: 0;
@@ -17,15 +18,15 @@ body {
     padding: 0 20px;
 }
 
-/* Шапка */
+/* Шапка - УЛУЧШЕННАЯ */
 header {
-    background: #222;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Градиент вместо плоского цвета */
     color: white;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
 header .container {
@@ -34,16 +35,6 @@ header .container {
     align-items: center;
 }
 
-.logo h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-    color: white;
-}
-
-.logo p {
-    font-size: 14px;
-    color: #ccc;
-}
 /* Улучшенный логотип с иконкой */
 .logo-with-icon {
     display: flex;
@@ -53,8 +44,8 @@ header .container {
 
 .logo-with-icon i {
     font-size: 32px;
-    color: #4CAF50;
-    text-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+    color: #FF9800; /* ИЗМЕНЕНО: с зеленого на оранжевый */
+    text-shadow: 0 2px 5px rgba(255, 152, 0, 0.4);
 }
 
 .logo-text {
@@ -80,22 +71,47 @@ header .container {
     letter-spacing: 0.8px;
     opacity: 0.9;
 }
+
+/* Навигация - ОБНОВЛЕННАЯ */
+nav {
+    display: flex;
+    gap: 25px; /* Увеличили расстояние между ссылками */
+}
+
 nav a {
-    color: white;
+    color: #e0e0e0;
     text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
+    padding: 8px 0;
+    position: relative;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color: #4CAF50;
+    color: #FF9800; /* ИЗМЕНЕНО: с зеленого на оранжевый */
 }
 
+/* Эффект подчеркивания при наведении */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #FF9800; /* ИЗМЕНЕНО: с зеленого на оранжевый */
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Контакты в шапке */
 .phone {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
 }
 
 .phone-number {
@@ -104,141 +120,208 @@ nav a:hover {
     font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.phone-number:hover {
+    color: #FF9800; /* ИЗМЕНЕНО: с зеленого на оранжевый */
 }
 
 .whatsapp {
-    background: #25D366;
+    background: linear-gradient(135deg, #25D366 0%, #1DA851 100%); /* Градиент для WhatsApp */
     color: white;
     text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: background 0.3s;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
 }
 
 .whatsapp:hover {
-    background: #1da851;
+    background: linear-gradient(135deg, #1DA851 0%, #169c43 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
 }
 
-/* Герой секция */
+/* Герой секция - УЛУЧШЕННАЯ */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero-bg.jpg');
+    background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(22, 33, 62, 0.9)), 
+                url('images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 150px 0;
+    padding: 160px 0;
     margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255, 152, 0, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    font-weight: 700;
+    font-size: 42px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
 .hero p {
     font-size: 20px;
-    margin-bottom: 40px;
-    max-width: 600px;
+    margin-bottom: 50px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    color: #e0e0e0;
+    line-height: 1.6;
 }
 
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
 }
 
+/* ГЛАВНЫЕ ИЗМЕНЕНИЯ КНОПОК */
 .btn {
-    background: #ff6600;
+    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%); /* Градиент оранжевый */
     color: white;
-    padding: 15px 30px;
+    padding: 16px 35px;
     text-decoration: none;
-    border-radius: 5px;
+
+Olga Volkova, [20.01.2026 13:26]
+border-radius: 10px;
     font-size: 18px;
-    font-weight: 600;
-    transition: all 0.3s;
+    font-weight: 700;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.3);
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 220px;
+}
+
+/* Эффект свечения при наведении */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
 }
 
 .btn:hover {
-    background: #ff6600;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #FF5722 0%, #F4511E 100%);
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(255, 87, 34, 0.4);
 }
 
+.btn:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+/* Вторая кнопка - СИЛЬНО ИЗМЕНЕНА */
 .btn.secondary {
     background: transparent;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
 .btn.secondary:hover {
-    background: white;
-    color: #222;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Портфолио */
 .portfolio {
-    padding: 80px 0;
-    background: #f9f9f9;
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
 }
 
 .portfolio h2 {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 32px;
-    color: #222;
+    font-size: 36px;
+    color: #1a1a2e;
+    font-weight: 800;
 }
 
 .subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     font-size: 18px;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px;
-    margin-bottom: 50px;
+    gap: 35px;
+    margin-bottom: 60px;
 }
 
 .portfolio-item {
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     overflow: hidden;
-    height: 300px;
+    height: 320px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .portfolio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .portfolio-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s;
+    transition: transform 0.7s ease;
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .portfolio-info {
@@ -246,11 +329,11 @@ nav a:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    background: linear-gradient(transparent, rgba(26, 26, 46, 0.95));
     color: white;
-    padding: 20px;
+    padding: 25px;
     transform: translateY(100%);
-    transition: transform 0.3s;
+    transition: transform 0.4s ease;
 }
 
 .portfolio-item:hover .portfolio-info {
@@ -258,240 +341,392 @@ nav a:hover {
 }
 
 .portfolio-info h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #FF9800; /* ИЗМЕНЕНО: оранжевый акцент */
 }
 
 .portfolio-info p {
-    font-size: 14px;
+    font-size: 15px;
     opacity: 0.9;
+    line-height: 1.5;
 }
 
 .portfolio-cta {
     text-align: center;
-    padding: 30px;
+    padding: 40px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .instagram-link {
     color: #E1306C;
     font-weight: bold;
-
-text-decoration: none;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin-left: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: rgba(225, 48, 108, 0.1);
+    transition: all 0.3s;
 }
 
 .instagram-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background: rgba(225, 48, 108, 0.2);
+    transform: translateY(-2px);
 }
 
-/* Калькулятор */
+/* Калькулятор - УЛУЧШЕННЫЙ */
 .calculator {
-    padding: 80px 0;
-    background: white;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
 }
 
 .calculator h2 {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 32px;
-    color: #222;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #1a1a2e;
+    font-weight: 800;
 }
 
 .calc-form {
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
     background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.
+
+Olga Volkova, [20.01.2026 13:26]
+1);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #1a1a2e;
+    font-size: 16px;
 }
 
 .form-group select {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
+    background: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a1a2e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
 }
 
 .form-group select:focus {
     outline: none;
-    border-color: #4CAF50;
+    border-color: #FF9800; /* ИЗМЕНЕНО: оранжевый */
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
 }
 
 .calc-result {
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 2px solid #4CAF50;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid #FF9800; /* ИЗМЕНЕНО: оранжевый */
 }
 
 .calc-result h3 {
-    color: #222;
-    margin-bottom: 10px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 #total-price {
-    font-size: 32px;
-    color: #4CAF50;
-    font-weight: bold;
+    font-size: 42px;
+    color: #FF9800; /* ИЗМЕНЕНО: оранжевый */
+    font-weight: 900;
+    text-shadow: 0 2px 5px rgba(255, 152, 0, 0.2);
+}
+
+/* Кнопка в калькуляторе */
+.calc-form .btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 18px;
+    font-size: 19px;
+    border-radius: 12px;
 }
 
 /* Услуги */
 .services {
-    padding: 80px 0;
-    background: #f9f9f9;
+    padding: 100px 0;
+    background: white;
 }
 
 .services h2 {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 32px;
-    color: #222;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #1a1a2e;
+    font-weight: 800;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
 }
 
 .service-card {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #FF9800, #FF5722);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
 .service-card h3 {
-    color: #222;
-    margin-bottom: 15px;
-    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .service-card p {
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    line-height: 1.6;
 }
 
 .price {
     display: block;
-    font-size: 24px;
-    color: #4CAF50;
-    font-weight: bold;
-    margin-top: 15px;
+    font-size: 28px;
+    color: #FF9800; /* ИЗМЕНЕНО: оранжевый */
+    font-weight: 900;
+    margin-top: 20px;
+    text-shadow: 0 2px 5px rgba(255, 152, 0, 0.2);
 }
 
 /* Контакты */
 .contacts {
-    padding: 80px 0;
-    background: #f9f9f9;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
 }
 
 .contacts h2 {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 32px;
-    color: #222;
+    margin-bottom: 60px;
+    font-size: 36px;
+    color: #1a1a2e;
+    font-weight: 800;
 }
 
 .contacts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
 }
 
 .contact-info h3 {
-    margin: 25px 0 10px;
-    color: #222;
+    margin: 30px 0 15px;
+    color: #1a1a2e;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .contact-info p {
-    margin-bottom: 10px;
-    color: #666;
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.6;
 }
 
 .contact-info a {
-    color: #4CAF50;
+    color: #FF9800; /* ИЗМЕНЕНО: оранжевый */
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
 .contact-info a:hover {
+    color: #FF5722;
     text-decoration: underline;
 }
 
 .contact-form {
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .contact-form h3 {
-    margin-bottom: 25px;
-    color: #222;
+    margin-bottom: 30px;
+    color: #1a1a2e;
+    font-size: 26px;
+    font-weight: 800;
 }
 
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 16px 20px;
+    margin-bottom: 25px;
+
+Olga Volkova, [20.01.2026 13:26]
+border: 2px solid #e0e0e0;
+    border-radius: 10px;
     font-size: 16px;
+    transition: all 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+    outline: none;
+    border-color: #FF9800; /* ИЗМЕНЕНО: оранжевый */
+    box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
 }
 
 .contact-form button {
     width: 100%;
+    padding: 18px;
+    font-size: 19px;
+    border-radius: 12px;
 }
 
 /* Футер */
 footer {
-    background: #222;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Снежинки */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #FF9800, #FF5722);
+}
+
+/* Снежинки - улучшенные */
 .snowflake {
     position: fixed;
     top: -20px;
-    color: white;
-    font-size: 20px;
-    text-shadow: 0 0 5px rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 22px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     pointer-events: none;
     z-index: 9998;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+    
+    nav {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        min-width: 280px;
+    }
+    
+    .hero {
+        padding: 120px 0;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        min-width: 100%;
+        padding: 14px 25px;
+        font-size: 17px;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calc-form,
+    .contact-form {
+        padding: 25px;
+    }
 }
 
 /* Анимация снежинок */
@@ -722,5 +957,6 @@ footer {
     }
 }    
   
+
 
 
