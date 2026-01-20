@@ -1817,6 +1817,34 @@ a[href="https://t.me/evgen_19999"] {
     justify-content: center !important;
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4) !important;
 }
+/* Стили для Telegram иконки */
+.telegram-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  margin-left: 15px; /* Отступ от номера телефона */
+}
+
+.telegram-icon {
+  width: 28px;
+  height: 28px;
+  color: #0088cc;
+  transition: color 0.3s ease;
+}
+
+.telegram-link:hover .telegram-icon {
+  color: #ff7b00;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .telegram-icon {
+    width: 32px;
+    height: 32px;
+    color: #ff7b00; /* Оранжевый на мобильных */
+  }
+}
 
 
 
