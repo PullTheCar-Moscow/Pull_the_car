@@ -1,3 +1,11 @@
+/* САМАЯ КОРОТКАЯ ВЕРСИЯ - добавьте в НАЧАЛО CSS */
+.btn-primary, .btn-secondary, .cta-buttons a {
+    background: #FF9800 !important;
+    background-image: none !important;
+}
+.cta-buttons a:last-child {
+    background: #4CAF50 !important;
+}
 /* Основные стили */
 * {
     margin: 0;
@@ -1626,4 +1634,5 @@ section#main .btn-secondary {
     display: inline-block !important;
     cursor: pointer !important;
 }
+
 
