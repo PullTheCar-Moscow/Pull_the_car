@@ -1,3 +1,154 @@
+/* ОРАНЖЕВЫЕ КНОПКИ ДЛЯ okleyka-moscow.ru */
+.cta-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 60px 0;
+}
+
+/* Основная оранжевая кнопка */
+.btn-primary, .cta-buttons a:first-child {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    padding: 22px 45px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 
+        0 8px 25px rgba(255, 107, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Вторая оранжевая кнопка */
+.btn-secondary, .cta-buttons a:last-child {
+    background: transparent !important;
+    border: 3px solid #FF6B00 !important;
+    border-radius: 12px !important;
+    color: #FF6B00 !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
+    padding: 20px 45px !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    box-shadow: 0 8px 20px rgba(255, 107, 0, 0.2) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Эффекты при наведении */
+.btn-primary:hover, .cta-buttons a:first-child:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 
+        0 12px 30px rgba(255, 107, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset !important;
+    background: linear-gradient(135deg, #FF5A00 0%, #FF8500 100%) !important;
+}
+
+.btn-secondary:hover, .cta-buttons a:last-child:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 25px rgba(255, 107, 0, 0.4) !important;
+    background: rgba(255, 107, 0, 0.1) !important;
+    border-color: #FF8500 !important;
+    color: #FF8500 !important;
+}
+
+/* Эффект нажатия */
+.btn-primary:active, .cta-buttons a:first-child:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 
+        0 5px 15px rgba(255, 107, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+}
+
+.btn-secondary:active, .cta-buttons a:last-child:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 5px 12px rgba(255, 107, 0, 0.3) !important;
+}
+
+/* Анимация пульсации для первой кнопки */
+@keyframes pulse-orange {
+    0% {
+        box-shadow: 
+            0 8px 25px rgba(255, 107, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 0 0 0 rgba(255, 107, 0, 0.7);
+    }
+    70% {
+        box-shadow: 
+            0 8px 25px rgba(255, 107, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 0 0 15px rgba(255, 107, 0, 0);
+    }
+    100% {
+        box-shadow: 
+            0 8px 25px rgba(255, 107, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+            0 0 0 0 rgba(255, 107, 0, 0);
+    }
+}
+
+.cta-buttons a:first-child {
+    animation: pulse-orange 2s infinite;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 40px 0;
+    }
+    
+    .btn-primary, .btn-secondary, .cta-buttons a {
+        width: 100%;
+        max-width: 320px;
+        padding: 20px 30px !important;
+        font-size: 1.1rem !important;
+    }
+}
+
+/* Для админ-панелей и плагинов */
+.wp-block-button__link,
+.elementor-button,
+.vc_btn3 {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF9500 100%) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: white !important;
+
+Olga Volkova, [20.01.2026 15:50]
+font-weight: 700 !important;
+    padding: 20px 40px !important;
+    text-decoration: none !important;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4) !important;
+}
+
+.wp-block-button__link:hover,
+.elementor-button:hover,
+.vc_btn3:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 30px rgba(255, 107, 0, 0.6) !important;
+    background: linear-gradient(135deg, #FF5A00 0%, #FF8500 100%) !important;
+}
 /* САМАЯ КОРОТКАЯ ВЕРСИЯ - добавьте в НАЧАЛО CSS */
 .btn-primary, .btn-secondary, .cta-buttons a {
     background: #FF9800 !important;
@@ -1514,6 +1665,7 @@ section#main .btn-secondary {
     display: inline-block !important;
     cursor: pointer !important;
 }
+
 
 
 
