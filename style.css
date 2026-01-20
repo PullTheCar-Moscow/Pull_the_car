@@ -1845,60 +1845,45 @@ a[href="https://t.me/evgen_19999"] {
     color: #ff7b00; /* Оранжевый на мобильных */
   }
 }
-/* Общие стили для контактов */
-.contacts {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-}
-
-/* Стили для Telegram с иконкой и текстом */
-.telegram-item {
-  display: flex;
-  align-items: center;
-}
-
+/* Стили для Telegram ссылки */
 .telegram-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 10px; /* Расстояние между иконкой и текстом */
   text-decoration: none;
   color: white;
-  transition: all 0.3s ease;
+  gap: 8px;
+  padding: 0;
+  background: none !important; /* Убираем фон */
+  border: none !important; /* Убираем обводку */
 }
 
+/* Иконка Telegram - просто оранжевая без фона */
 .telegram-icon {
   width: 24px;
   height: 24px;
-  color: #0088cc;
-  transition: color 0.3s ease;
+  color: #ff7b00 !important; /* Оранжевый цвет */
+  fill: #ff7b00 !important; /* Оранжевая заливка */
+  background: none !important; /* Убираем фон */
+  border-radius: 0 !important; /* Убираем скругление */
 }
 
+/* Текст "оператор" */
 .telegram-text {
   font-size: 16px;
   font-weight: 500;
+  color: white;
+  transition: color 0.3s ease;
 }
 
-/* Цвет для мобильных и при наведении */
-@media (max-width: 768px) {
-  .telegram-icon {
-    color: #ff7b00; /* Оранжевый на мобильных */
-  }
-  
-  .telegram-link {
-    color: #ff7b00; /* Оранжевый текст на мобильных */
-  }
-}
-
+/* При наведении */
 .telegram-link:hover .telegram-icon {
-  color: #ff7b00;
+  color: #ffa94d !important; /* Светлее оранжевый при наведении */
+  fill: #ffa94d !important;
 }
 
 .telegram-link:hover .telegram-text {
-  color: #ff7b00;
+  color: #ffa94d;
 }
-
 
 
 
