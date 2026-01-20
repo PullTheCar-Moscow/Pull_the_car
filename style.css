@@ -24,126 +24,6 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-/* ==================== СИЛОВОЙ МЕТОД ==================== */
-/* ВСТАВЬТЕ В НАЧАЛО CSS ФАЙЛА ИЛИ СРАЗУ ПОСЛЕ ВАШИХ СТИЛЕЙ */
-
-/* 1. УДАЛЯЕМ ВСЕ ГРАДИЕНТЫ И ПРИМЕНЯЕМ ОРАНЖЕВЫЙ */
-.btn-primary,
-.btn-secondary,
-.cta-buttons a,
-.hero a,
-a[href="#calculator"],
-a[href="#contacts"],
-[class*="btn"] {
-    /* Удаляем все градиенты */
-    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%) !important;
-    background-image: none !important;
-    background-color: #FF9800 !important;
-    
-    /* Основные стили */
-    color: white !important;
-    border: none !important;
-    border-radius: 12px !important;
-    padding: 16px 35px !important;
-    font-size: 18px !important;
-    font-weight: 700 !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    cursor: pointer !important;
-    box-shadow: 0 8px 25px rgba(255, 87, 34, 0.3) !important;
-    margin: 10px !important;
-    text-align: center !important;
-    min-width: 220px !important;
-    
-    /* Сбрасываем позиционирование */
-    position: static !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-    width: auto !important;
-    height: auto !important;
-}
-
-/* 2. Переопределяем SPECIFIC кнопки */
-.cta-buttons a.btn-primary,
-.hero a[href="#calculator"],
-section#main .cta-buttons a:first-child {
-    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%) !important;
-}
-
-/* 3. Вторая кнопка - зеленый градиент */
-.cta-buttons a.btn-secondary,
-.hero a[href="#contacts"],
-section#main .cta-buttons a:last-child {
-    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%) !important;
-    background-color: #4CAF50 !important;
-    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3) !important;
-}
-
-/* 4. Hover эффекты */
-.btn-primary:hover,
-.cta-buttons a[href="#calculator"]:hover {
-    background: linear-gradient(135deg, #FF5722 0%, #E64A19 100%) !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 12px 30px rgba(255, 87, 34, 0.4) !important;
-}
-
-.btn-secondary:hover,
-.cta-buttons a[href="#contacts"]:hover {
-    background: linear-gradient(135deg, #388E3C 0%, #2E7D32 100%) !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 12px 30px rgba(76, 175, 80, 0.4) !important;
-}
-
-/* 5. Отключаем анимации/трансформации которые могут мешать */
-.btn-primary,
-.btn-secondary {
-    transition: all 0.3s ease !important;
-    animation: none !important;
-}
-
-/* 6. Переопределяем ВСЕ inline-стили */
-a[style*="background"],
-a[style*="gradient"],
-a[style*="linear-gradient"] {
-    background: linear-gradient(135deg, #FF9800 0%, #FF5722 100%) !important;
-    background-image: none !important;
-}
-
-/* 7. Удаляем псевдоэлементы которые могут перекрывать */
-.btn-primary::before,
-.btn-primary::after,
-.btn-secondary::before,
-.btn-secondary::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* 8. Контейнер кнопок */
-.cta-buttons {
-    display: flex !important;
-    gap: 20px !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    margin-top: 30px !important;
-    position: static !important;
-}
-
-/* 9. Мобильная версия */
-@media (max-width: 768px) {
-    .btn-primary,
-    .btn-secondary {
-        min-width: 280px !important;
-        padding: 14px 25px !important;
-        font-size: 17px !important;
-    }
-    
-    .cta-buttons {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 15px !important;
-    }
-}
 /* Шапка - УЛУЧШЕННАЯ */
 header {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Градиент вместо плоского цвета */
@@ -1634,6 +1514,7 @@ section#main .btn-secondary {
     display: inline-block !important;
     cursor: pointer !important;
 }
+
 
 
 
