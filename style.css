@@ -1867,7 +1867,7 @@ a[href="https://t.me/evgen_19999"] {
   border-radius: 0 !important; /* Убираем скругление */
 }
 
-/* Текст "оператор" */
+/* Текст "Telegram" */
 .telegram-text {
   font-size: 16px;
   font-weight: 500;
@@ -1884,6 +1884,7 @@ a[href="https://t.me/evgen_19999"] {
 .telegram-link:hover .telegram-text {
   color: #ffa94d;
 }
+
 
 
 
