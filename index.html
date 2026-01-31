@@ -40,7 +40,7 @@
         h1, h2, h3, h4 {
             font-weight: bold;
             margin-bottom: 15px;
-            color: #2c3e50; /* Темно-синий для заголовков */
+            color: #2c3e50;
         }
         
         h2 {
@@ -80,13 +80,13 @@
         
         .logo-with-icon .fa-car {
             font-size: 2rem;
-            color: #ff6600; /* Оранжевая иконка */
+            color: #ff6600;
         }
         
         .logo-text h1 {
             font-size: 1.5rem;
             margin: 0;
-            color: #2c3e50; /* Темно-синий */
+            color: #2c3e50;
         }
         
         .logo-subtitle {
@@ -112,11 +112,11 @@
         }
         
         .nav a:hover {
-            color: #ff6600; /* Оранжевый при наведении */
+            color: #ff6600;
             background-color: #f8f9fa;
         }
         
-        /* Контакты в шапке */
+        /* Контакты в шапке - ОБНОВЛЕНО: Telegram без заливки */
         .phone {
             display: flex;
             align-items: center;
@@ -137,21 +137,22 @@
             color: #ff6600;
         }
         
+        /* Telegram кнопка в шапке - БЕЗ ЗАЛИВКИ */
         .header .telegram-link {
             display: flex;
             align-items: center;
             gap: 8px;
-            background: #0066cc; /* Синяя кнопка */
-            color: #fff !important;
+            color: #333 !important; /* Серый цвет текста */
             text-decoration: none;
             font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
+            padding: 8px 0;
             transition: all 0.3s;
+            background: none !important; /* Убираем фон */
+            border: none !important; /* Убираем границу */
         }
         
         .header .telegram-link:hover {
-            background: #0055aa; /* Темнее при наведении */
+            color: #0066cc !important; /* Синий при наведении */
         }
         
         .telegram-icon {
@@ -168,27 +169,33 @@
             cursor: pointer;
         }
         
-        /* ===== ГЕРОЙ СЕКЦИЯ ===== */
+        /* ===== ГЕРОЙ СЕКЦИЯ С ФОНОВЫМ ИЗОБРАЖЕНИЕМ ===== */
         .hero {
-            padding: 120px 0 80px;
-            background: #f8f9fa;
+            padding: 180px 0 100px; /* Увеличил отступ сверху для фото */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+                        url('hero-bg.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
             text-align: center;
+            position: relative;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            color: #2c3e50;
+            font-size: 2.8rem;
+            color: #fff; /* Белый текст на фоне фото */
             margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
         
         .hero .subtitle {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
-        /* Кнопки призыва */
+        /* Кнопки призыва на герое */
         .cta-buttons {
             display: flex;
             gap: 15px;
@@ -197,8 +204,8 @@
         }
         
         .btn-primary, .btn-secondary {
-            padding: 12px 25px;
-            font-size: 1rem;
+            padding: 14px 28px;
+            font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 4px;
@@ -206,26 +213,29 @@
             display: inline-block;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         
         .btn-primary {
-            background: #0066cc; /* Синяя кнопка */
+            background: #0066cc;
             color: #fff !important;
         }
         
         .btn-primary:hover {
             background: #0055aa;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
         }
         
         .btn-secondary {
-            background: #ff6600; /* Оранжевая кнопка */
+            background: #ff6600;
             color: #fff !important;
         }
         
         .btn-secondary:hover {
             background: #e65c00;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.3);
         }
         
         /* ===== СЕКЦИЯ УСЛУГ ===== */
@@ -242,7 +252,7 @@
             padding: 25px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
             transition: all 0.3s;
-            border-top: 4px solid #0066cc; /* Синяя полоска сверху */
+            border-top: 4px solid #0066cc;
             text-align: center;
         }
         
@@ -253,7 +263,7 @@
         
         .service-icon {
             font-size: 2rem;
-            color: #ff6600; /* Оранжевые иконки */
+            color: #ff6600;
             margin-bottom: 15px;
         }
         
@@ -264,7 +274,7 @@
         
         .price {
             display: inline-block;
-            background: #ff6600; /* Оранжевый фон для цены */
+            background: #ff6600;
             color: #fff;
             padding: 5px 15px;
             border-radius: 20px;
@@ -350,16 +360,16 @@
         }
         
         #totalPrice {
-            color: #ff6600; /* Оранжевая цена */
+            color: #ff6600;
             font-size: 1.5rem;
             font-weight: bold;
         }
         
-        /* ===== КОНТАКТЫ ===== */
+        /* ===== КОНТАКТЫ - ОБНОВЛЕНО: форма ниже ===== */
         .contact-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
             margin-top: 30px;
         }
         
@@ -369,25 +379,42 @@
             }
         }
         
+        /* Левая колонка контактов */
+        .contact-left {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
         .address-box {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+        }
+        
+        .address-box h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .contact-details {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
         }
         
         .contact-details h3 {
             color: #2c3e50;
-            margin-top: 15px;
+            margin-top: 20px;
             font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .contact-details h3:first-child {
@@ -395,27 +422,23 @@
         }
         
         .contact-details a {
-            color: #0066cc; /* Синие ссылки */
+            color: #0066cc;
             text-decoration: none;
+            transition: all 0.3s;
         }
         
         .contact-details a:hover {
+            color: #ff6600;
             text-decoration: underline;
         }
         
-        /* Яндекс карта */
-        #map {
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Форма заявки */
+        /* Правая колонка - форма заявки (остается на своем месте) */
         .contact-form {
             background: #fff;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            height: fit-content;
         }
         
         .contact-form h3 {
@@ -442,7 +465,7 @@
         .contact-form button {
             width: 100%;
             padding: 12px;
-            background: #0066cc; /* Синяя кнопка */
+            background: #0066cc;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -456,9 +479,18 @@
             background: #0055aa;
         }
         
+        /* Яндекс карта */
+        #map {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            height: 300px;
+            margin-top: 10px;
+        }
+        
         /* ===== ФУТЕР ===== */
         .footer {
-            background: #2c3e50; /* Темно-синий фон */
+            background: #2c3e50;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -491,6 +523,7 @@
                 order: 3;
                 flex-direction: column;
                 gap: 10px;
+                align-items: center;
             }
             
             .menu-toggle {
@@ -525,16 +558,25 @@
                 font-size: 2rem;
             }
             
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
             .hero {
-                padding: 100px 0 60px;
+                padding: 140px 0 80px;
             }
             
             section {
                 padding: 40px 0;
             }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
         
-        /* Минималистичные акценты оранжево-синего */
+        /* Минималистичные акценты */
         .accent-orange {
             color: #ff6600;
         }
@@ -575,8 +617,9 @@
                 <a href="tel:+79105152421" class="phone-number">
                     <i class="fas fa-phone"></i> +7 (910) 515-24-21
                 </a>
+                <!-- Telegram кнопка БЕЗ заливки -->
                 <a href="https://t.me/evgen_19999" class="telegram-link" title="Написать в Telegram" target="_blank">
-                    <svg class="telegram-icon" viewBox="0 0 24 24" width="24" height="24">
+                    <svg class="telegram-icon" viewBox="0 0 24 24" width="20" height="20">
                         <path fill="currentColor" d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-0.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.461-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
                     </svg>
                     <span class="telegram-text">Telegram</span>
@@ -789,19 +832,19 @@
         <div class="container">
             <h2>Контакты</h2>
             <div class="contact-info">
-                <div>
-                    <h3><i class="fas fa-map-marker-alt"></i> Мы находимся</h3>
-                    
-                    <!-- Яндекс Карта -->
-                    <div id="map" style="width: 100%; height: 300px; border-radius: 8px; margin: 15px 0;"></div>
-                    
-                    <!-- Адрес -->
+                <div class="contact-left">
+                    <!-- Мы находимся -->
                     <div class="address-box">
-                        <p><strong>Адрес:</strong> Москва, Новомосковский административный округ, 
+                        <h3><i class="fas fa-map-marker-alt"></i> Мы находимся</h3>
+                        <!-- Яндекс Карта -->
+                        <div id="map"></div>
+                        <!-- Адрес -->
+                        <p style="margin-top: 15px;"><strong>Адрес:</strong> Москва, Новомосковский административный округ, 
                         Филимонковский район, д. Пушкино, ул. 50/2</p>
                         <p><i class="fas fa-car"></i> Есть парковка для клиентов</p>
                     </div>
                     
+                    <!-- Контактные данные -->
                     <div class="contact-details">
                         <h3><i class="fas fa-clock"></i> Время работы</h3>
                         <p>Пн-Пт: 10:00 - 21:00</p>
@@ -817,6 +860,7 @@
                     </div>
                 </div>
                 
+                <!-- Форма заявки -->
                 <div class="contact-form">
                     <h3>Оставить заявку</h3>
                     <form id="orderForm">
@@ -913,7 +957,7 @@
                         balloonContent: 'Pull the Car - оклейка авто<br>Адрес: д. Пушкино, ул. 50/2'
                     }, {
                         preset: 'islands#orangeAutoIcon',
-                        iconColor: '#ff6600' // Оранжевая иконка на карте
+                        iconColor: '#ff6600'
                     });
                     
                     myMap.geoObjects.add(myPlacemark);
@@ -955,4 +999,3 @@
     </script>
 </body>
 </html>
-  
