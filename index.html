@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="yandex-verification" content="e682794388349405" />
     <title>Pull_the_car Москва - Оклейка авто защитной пленкой, химчистка, полировка</title>
     <meta name="description" content="Профессиональная оклейка автомобилей защитной пленкой в Москве. Полная оклейка, бронепленка, антигравийная защита, полировка, химчистка. Гарантия 5 лет.">
@@ -15,6 +15,13 @@
         /* ===== ОСНОВНЫЕ НАСТРОЙКИ ===== */
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
         }
         
         body {
@@ -24,6 +31,7 @@
             margin: 0;
             padding: 0;
             background-color: #fff;
+            overflow-x: hidden;
         }
         
         .container {
@@ -64,6 +72,11 @@
             background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .header.hidden {
+            transform: translateY(-100%);
         }
         
         .header .container {
@@ -116,7 +129,7 @@
             background-color: #f8f9fa;
         }
         
-        /* Контакты в шапке - ОБНОВЛЕНО: Telegram без заливки */
+        /* Контакты в шапке */
         .phone {
             display: flex;
             align-items: center;
@@ -142,17 +155,17 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #333 !important; /* Серый цвет текста */
+            color: #333 !important;
             text-decoration: none;
             font-weight: bold;
             padding: 8px 0;
             transition: all 0.3s;
-            background: none !important; /* Убираем фон */
-            border: none !important; /* Убираем границу */
+            background: none !important;
+            border: none !important;
         }
         
         .header .telegram-link:hover {
-            color: #0066cc !important; /* Синий при наведении */
+            color: #0066cc !important;
         }
         
         .telegram-icon {
@@ -167,11 +180,12 @@
             font-size: 1.5rem;
             color: #333;
             cursor: pointer;
+            padding: 5px;
         }
         
         /* ===== ГЕРОЙ СЕКЦИЯ С ФОНОВЫМ ИЗОБРАЖЕНИЕМ ===== */
         .hero {
-            padding: 180px 0 100px; /* Увеличил отступ сверху для фото */
+            padding: 180px 0 100px;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
                         url('images/hero-bg.jpg') no-repeat center center;
             background-size: cover;
@@ -182,7 +196,7 @@
         
         .hero h1 {
             font-size: 2.8rem;
-            color: #fff; /* Белый текст на фоне фото */
+            color: #fff;
             margin-bottom: 20px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
@@ -365,18 +379,12 @@
             font-weight: bold;
         }
         
-        /* ===== КОНТАКТЫ - ОБНОВЛЕНО: форма ниже ===== */
+        /* ===== КОНТАКТЫ ===== */
         .contact-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-top: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
         }
         
         /* Левая колонка контактов */
@@ -432,7 +440,7 @@
             text-decoration: underline;
         }
         
-        /* Правая колонка - форма заявки (остается на своем месте) */
+        /* Правая колонка - форма заявки */
         .contact-form {
             background: #fff;
             padding: 30px;
@@ -455,6 +463,7 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 1rem;
+            box-sizing: border-box;
         }
         
         .contact-form textarea {
@@ -477,6 +486,12 @@
         
         .contact-form button:hover {
             background: #0055aa;
+        }
+        
+        .contact-form button.loading {
+            background: #0055aa;
+            cursor: not-allowed;
+            opacity: 0.8;
         }
         
         /* Яндекс карта */
@@ -510,6 +525,7 @@
             .header .container {
                 flex-direction: column;
                 gap: 15px;
+                padding: 0 15px;
             }
             
             .nav {
@@ -529,8 +545,9 @@
             .menu-toggle {
                 display: block;
                 position: absolute;
-                top: 15px;
-                right: 20px;
+                top: 10px;
+                right: 15px;
+                z-index: 1001;
             }
             
             .nav {
@@ -550,29 +567,86 @@
             }
             
             .nav a {
-                padding: 10px;
+                padding: 12px;
                 text-align: center;
+                font-size: 1.1rem;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                padding: 0 10px;
             }
             
             .hero .subtitle {
                 font-size: 1.1rem;
+                padding: 0 15px;
             }
             
             .hero {
-                padding: 140px 0 80px;
+                padding: 140px 0 60px;
             }
             
             section {
                 padding: 40px 0;
             }
             
+            h2 {
+                font-size: 1.8rem;
+                padding: 0 10px;
+            }
+            
             .contact-info {
                 grid-template-columns: 1fr;
                 gap: 30px;
+                padding: 0 10px;
+            }
+            
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                padding: 0 10px;
+            }
+            
+            .calc-form {
+                margin: 30px 10px 0;
+                padding: 20px;
+            }
+            
+            .container {
+                padding: 0 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 20px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .cta-buttons {
+                gap: 10px;
+            }
+            
+            .service-card {
+                padding: 20px;
+            }
+            
+            .contact-form {
+                padding: 20px;
+            }
+            
+            .address-box, .contact-details {
+                padding: 20px;
             }
         }
         
@@ -628,7 +702,7 @@
             <button class="menu-toggle">☰</button>
         </div>
     </header>
- 
+
     <section class="hero" id="main">
         <div class="container">
             <h1>Профессиональная оклейка автомобилей в полиуретановую пленку</h1>
@@ -639,7 +713,7 @@
             </div>
         </div>
     </section>
- 
+
     <section class="services" id="services">
         <div class="container">
             <h2>Услуги</h2>
@@ -671,7 +745,7 @@
             </div>
         </div>
     </section>
- 
+
     <!-- Портфолио -->
     <section id="works" class="portfolio">
         <div class="container">
@@ -758,7 +832,7 @@
                         <p>Оклейка в прозрачный матовый полиуретан</p>
                     </div>
                 </div>
- 
+
                  <!-- Фото 9 -->
                 <div class="portfolio-item">
                     <img src="images/car16.jpg" 
@@ -788,7 +862,7 @@
                         <p>Оклейка в прозрачный глянцевый полиуретан</p>
                     </div>
                 </div>
- 
+
                  <!-- Фото 12 -->
                 <div class="portfolio-item">
                     <img src="images/car14.jpg" 
@@ -801,7 +875,7 @@
             </div> 
         </div> 
     </section>
- 
+
     <section class="calculator" id="calculator">
         <div class="container">
             <h2>Калькулятор стоимости</h2>
@@ -827,7 +901,7 @@
             </div>
         </div>
     </section>
- 
+
     <section class="contacts" id="contacts">
         <div class="container">
             <h2>Контакты</h2>
@@ -864,23 +938,57 @@
                 <div class="contact-form">
                     <h3>Оставить заявку</h3>
                     <form id="orderForm">
-                        <input type="text" placeholder="Ваше имя" required>
-                        <input type="tel" placeholder="Телефон" required>
-                        <textarea placeholder="Опишите, что хотите сделать: оклейка, полировка, химчистка? Модель автомобиля и год выпуска?"></textarea>
-                        <button type="submit">Отправить</button>
+                        <input type="text" placeholder="Ваше имя" required id="clientName">
+                        <input type="tel" placeholder="Телефон" required id="clientPhone">
+                        <textarea placeholder="Опишите, что хотите сделать: оклейка, полировка, химчистка? Модель автомобиля и год выпуска?" id="clientMessage"></textarea>
+                        <button type="submit" id="submitBtn">Отправить</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
- 
+
     <footer class="footer">
         <div class="container">
             <p>© 2024 Pull the car. Все права защищены.</p>
         </div>
     </footer>
- 
+
     <script>
+        // ===== ТЕЛЕГРАМ БОТ =====
+        // Замените TELEGRAM_BOT_TOKEN и CHAT_ID на свои данные
+        const TELEGRAM_BOT_TOKEN = '8428013537:AAFNB_TbRBti8Ix6JIC3K3ybXoRtmhQw9ps'; // Замените на токен вашего бота
+        const TELEGRAM_CHAT_ID = '161375633'; // Замените на ваш chat_id
+        
+        async function sendToTelegram(formData) {
+            try {
+                const message = `📋 Новая заявка с сайта!\n\n` +
+                               `👤 Имя: ${formData.name}\n` +
+                               `📞 Телефон: ${formData.phone}\n` +
+                               `🚗 Сообщение: ${formData.message || 'Не указано'}\n` +
+                               `🌐 Источник: ${window.location.href}`;
+                
+                const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                return response.ok;
+            } catch (error) {
+                console.error('Ошибка отправки в Telegram:', error);
+                return false;
+            }
+        }
+        
         // ===== ГАРАНТИРОВАННЫЙ ФУНКЦИОНАЛ =====
         
         // 1. Калькулятор стоимости
@@ -908,9 +1016,9 @@
         
         document.getElementById('carType').addEventListener('change', updatePrice);
         document.getElementById('filmType').addEventListener('change', updatePrice);
-        updatePrice(); // Инициализация
+        updatePrice();
         
-        // 2. Плавная прокрутка с гарантией
+        // 2. Плавная прокрутка
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -925,7 +1033,6 @@
                         behavior: 'smooth'
                     });
                     
-                    // Закрываем мобильное меню если открыто
                     const nav = document.querySelector('.nav');
                     const menuToggle = document.querySelector('.menu-toggle');
                     if (nav && nav.classList.contains('active')) {
@@ -936,11 +1043,50 @@
             });
         });
         
-        // 3. Форма заявки
-        document.getElementById('orderForm').addEventListener('submit', function(e) {
+        // 3. Форма заявки с отправкой в Telegram
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            alert('Заявка отправлена! Мы свяжемся с вами в течение 30 минут.');
-            this.reset();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            
+            // Получаем данные формы
+            const formData = {
+                name: document.getElementById('clientName').value.trim(),
+                phone: document.getElementById('clientPhone').value.trim(),
+                message: document.getElementById('clientMessage').value.trim()
+            };
+            
+            // Валидация
+            if (!formData.name || !formData.phone) {
+                alert('Пожалуйста, заполните имя и телефон');
+                return;
+            }
+            
+            // Блокируем кнопку на время отправки
+            submitBtn.textContent = 'Отправка...';
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            try {
+                // Отправляем в Telegram
+                const sent = await sendToTelegram(formData);
+                
+                if (sent) {
+                    alert('✅ Заявка успешно отправлена! Мы свяжемся с вами в течение 30 минут.');
+                    this.reset();
+                } else {
+                    alert('⚠️ Не удалось отправить заявку. Пожалуйста, позвоните по телефону.');
+                }
+            } catch (error) {
+                console.error('Ошибка:', error);
+                alert('⚠️ Произошла ошибка. Пожалуйста, позвоните по телефону.');
+            } finally {
+                // Возвращаем кнопку в исходное состояние
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            }
         });
         
         // 4. Яндекс Карта
@@ -982,7 +1128,8 @@
             const nav = document.querySelector('.nav');
             
             if (menuToggle && nav) {
-                menuToggle.addEventListener('click', function() {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
                     nav.classList.toggle('active');
                     this.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
                 });
@@ -994,9 +1141,56 @@
                         menuToggle.innerHTML = '☰';
                     }
                 });
+                
+                // Закрытие меню при ресайзе
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        menuToggle.innerHTML = '☰';
+                    }
+                });
             }
         });
+        
+        // 6. Скрытие шапки при скролле
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+        const scrollThreshold = 100; // Сколько пикселей нужно проскроллить
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > scrollThreshold) {
+                if (scrollTop > lastScrollTop) {
+                    // Скроллим вниз - скрываем шапку
+                    header.classList.add('hidden');
+                } else {
+                    // Скроллим вверх - показываем шапку
+                    header.classList.remove('hidden');
+                }
+            } else {
+                // Вверху страницы - всегда показываем шапку
+                header.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // 7. Предотвращение масштабирования на мобильных
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+        
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
     </script>
 </body>
 </html>
-
