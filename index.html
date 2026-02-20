@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <meta name="yandex-verification" content="e682794388349405" />
     <title>Pull_the_car Москва - Оклейка авто защитной пленкой, химчистка, полировка</title>
     <meta name="description" content="Профессиональная оклейка автомобилей защитной пленкой в Москве. Полная оклейка, бронепленка, антигравийная защита, полировка, химчистка. Гарантия 5 лет.">
@@ -702,7 +702,7 @@
             <button class="menu-toggle">☰</button>
         </div>
     </header>
-
+ 
     <section class="hero" id="main">
         <div class="container">
             <h1>Профессиональная оклейка автомобилей в полиуретановую пленку</h1>
@@ -713,7 +713,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section class="services" id="services">
         <div class="container">
             <h2>Услуги</h2>
@@ -745,7 +745,7 @@
             </div>
         </div>
     </section>
-
+ 
     <!-- Портфолио -->
     <section id="works" class="portfolio">
         <div class="container">
@@ -832,7 +832,7 @@
                         <p>Оклейка в прозрачный матовый полиуретан</p>
                     </div>
                 </div>
-
+ 
                  <!-- Фото 9 -->
                 <div class="portfolio-item">
                     <img src="images/car16.jpg" 
@@ -862,7 +862,7 @@
                         <p>Оклейка в прозрачный глянцевый полиуретан</p>
                     </div>
                 </div>
-
+ 
                  <!-- Фото 12 -->
                 <div class="portfolio-item">
                     <img src="images/car14.jpg" 
@@ -875,7 +875,7 @@
             </div> 
         </div> 
     </section>
-
+ 
     <section class="calculator" id="calculator">
         <div class="container">
             <h2>Калькулятор стоимости</h2>
@@ -901,7 +901,7 @@
             </div>
         </div>
     </section>
-
+ 
     <section class="contacts" id="contacts">
         <div class="container">
             <h2>Контакты</h2>
@@ -947,18 +947,39 @@
             </div>
         </div>
     </section>
-
+ 
     <footer class="footer">
         <div class="container">
             <p>© 2024 Pull the car. Все права защищены.</p>
         </div>
     </footer>
-
+ 
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=106928424', 'ym');
+        
+        ym(106928424, 'init', {
+            ssr:true,
+            webvisor:true,
+            clickmap:true,
+            ecommerce:"dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce:true,
+            trackLinks:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106928424" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+ 
     <script>
         // ===== ТЕЛЕГРАМ БОТ =====
-        // Замените TELEGRAM_BOT_TOKEN и CHAT_ID на свои данные
-        const TELEGRAM_BOT_TOKEN = '8428013537:AAFNB_TbRBti8Ix6JIC3K3ybXoRtmhQw9ps'; // Замените на токен вашего бота
-        const TELEGRAM_CHAT_ID = '161375633'; // Замените на ваш chat_id
+        const TELEGRAM_BOT_TOKEN = '8428013537:AAFNB_TbRBti8Ix6JIC3K3ybXoRtmhQw9ps';
+        const TELEGRAM_CHAT_ID = '161375633';
         
         async function sendToTelegram(formData) {
             try {
@@ -1050,26 +1071,22 @@
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.textContent;
             
-            // Получаем данные формы
             const formData = {
                 name: document.getElementById('clientName').value.trim(),
                 phone: document.getElementById('clientPhone').value.trim(),
                 message: document.getElementById('clientMessage').value.trim()
             };
             
-            // Валидация
             if (!formData.name || !formData.phone) {
                 alert('Пожалуйста, заполните имя и телефон');
                 return;
             }
             
-            // Блокируем кнопку на время отправки
             submitBtn.textContent = 'Отправка...';
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
             
             try {
-                // Отправляем в Telegram
                 const sent = await sendToTelegram(formData);
                 
                 if (sent) {
@@ -1082,7 +1099,6 @@
                 console.error('Ошибка:', error);
                 alert('⚠️ Произошла ошибка. Пожалуйста, позвоните по телефону.');
             } finally {
-                // Возвращаем кнопку в исходное состояние
                 submitBtn.textContent = originalText;
                 submitBtn.classList.remove('loading');
                 submitBtn.disabled = false;
@@ -1112,7 +1128,6 @@
             }
         }
         
-        // Загружаем Яндекс Карты
         if (!document.querySelector('script[src*="yandex"]')) {
             var script = document.createElement('script');
             script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
@@ -1134,7 +1149,6 @@
                     this.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
                 });
                 
-                // Закрытие меню при клике вне его
                 document.addEventListener('click', function(e) {
                     if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
                         nav.classList.remove('active');
@@ -1142,7 +1156,6 @@
                     }
                 });
                 
-                // Закрытие меню при ресайзе
                 window.addEventListener('resize', function() {
                     if (window.innerWidth > 768 && nav.classList.contains('active')) {
                         nav.classList.remove('active');
@@ -1155,42 +1168,26 @@
         // 6. Скрытие шапки при скролле
         let lastScrollTop = 0;
         const header = document.querySelector('.header');
-        const scrollThreshold = 100; // Сколько пикселей нужно проскроллить
+        const scrollThreshold = 100;
         
         window.addEventListener('scroll', function() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
             if (scrollTop > scrollThreshold) {
                 if (scrollTop > lastScrollTop) {
-                    // Скроллим вниз - скрываем шапку
                     header.classList.add('hidden');
                 } else {
-                    // Скроллим вверх - показываем шапку
                     header.classList.remove('hidden');
                 }
             } else {
-                // Вверху страницы - всегда показываем шапку
                 header.classList.remove('hidden');
             }
             
             lastScrollTop = scrollTop;
         });
         
-        // 7. Предотвращение масштабирования на мобильных
-        document.addEventListener('touchstart', function(event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-        
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(event) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
+        // 7. Отключаем блокировку масштабирования (удаляем предыдущие обработчики)
+        // Теперь пользователи могут масштабировать страницу на мобильных устройствах
     </script>
 </body>
 </html>
